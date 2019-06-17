@@ -1,0 +1,25 @@
+
+
+//updated
+"NSPhotoLibraryUsageDescription" = "consente di salvare clip video e istantanee video, aggiungere visi e impostare avatar.";
+"NSCameraUsageDescription" = "consente di aggiungere visi, eseguire la scansione di codici QR e impostare avatar.";
+"CFBundleName" = "Eufy Security";
+"CFBundleDisplayName" = "Eufy Security";
+"NSLocationWhenInUseUsageDescription" = "consente di trovare il server ottimale per l\'accesso.";
+"NSPhotoLibraryAddUsageDescription" = "consente di salvare clip video e istantanee video.";
+"NSMicrophoneUsageDescription" = "consente di parlare con la persona sul lato della telecamera attraverso l\'app.";
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Eufy Security is requesting your phone\'s location permission for Geofencing.";
+"NSLocationAlwaysUsageDescription" = "Eufy Security is requesting your phone\'s location permission for Geofencing.";
+

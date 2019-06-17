@@ -1,0 +1,49 @@
+
+
+//updated
+"bc.push.is_closed" = "est fermé";
+"bc.push.sdcard_format_fail_tip" = "Le formatage de la carte microSD a échoué.";
+"bc.push.someone_is_spotted" = "Une présence a été repérée.";
+"bc.push.is_online" = "est en ligne";
+"bc.push.home_base_alarm_pir_or_motion" = "La %@ émet une alarme en raison d'un mouvement détecté.";
+"bc.push.home_base_alarm_gsensor" = "La %@ émet une alarme en raison du déclenchement de l'antivol de la caméra.";
+"bc.push.sdcard_mount_fail_tip" = "La lecture de la carte microSD a échoué.";
+"bc.push.cloud_service_will_expire_warning" = "%1$@Le service de stockage sur le Cloud expirera dans %2$@ %3$@";
+"bc.push.motion_detected" = "Mouvement détecté";
+"bc.push.system_switched" = "Le système est passé en mode Absence en fonction du %@.";
+"bc.push.nosdcard_tip" = "Insérez une carte microSD.";
+"bc.push.system_geofencing" = "Géorepérage";
+"bc.push.sdcard_needformat_tip" = "La carte microSD doit être formatée pour chiffrer les données.";
+"bc.push.event" = "événement";
+"bc.push.system_switched_ex" = "Le système est passé en mode %@e en fonction du %@";
+"bc.push.Your_something" = "Votre %@";
+"bc.push.isopened" = "est ouvert";
+"bc.push.system_switched_default" = "Le système a automatiquement basculé les modes de sécurité en fonction des paramètres";
+"bc.push.detected_stranger" = "Une présence a été repérée.";
+"bc.push.system_schedule" = "Programme";
+"bc.push.system_alarm" = "Le système est passé en mode Absence en fonction du Géorepérage.";
+"bc.push.camera_battery_full" = "La caméra est entièrement chargée.";
+"bc.push.sdcard_formatting_tip" = "Formatage de la carte microSD…";
+"bc.push.sdcard_busy_tip" = "Formatage de la carte microSD…";
+"bc.push.home_base_alarm_door" = "La %@ émet une alarme en raison du déclenchement du capteur.";
+"bc.push.yourcamera" = "L'élément %@ de votre caméra";
+"bc.push.lowbattery_tip" = "a une batterie faible.";
+"bc.push.is_showing_up" = "arrive.";
+"bc.push.cam_overheating_tip" = "surchauffe.";
+"bc.push.gsensor_triggered_tip" = "Attention ! Quelqu'un déplace la caméra %@";
+"bc.push.sdcard_format_suc_tip" = "Formatage réussi de la carte microSD.";
+"bc.push.is_offline" = "est hors connexion";
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"bc.push.home_base_alarm_hot" = "HomeBase %@ is alarming due to camera is high temperature.";
+

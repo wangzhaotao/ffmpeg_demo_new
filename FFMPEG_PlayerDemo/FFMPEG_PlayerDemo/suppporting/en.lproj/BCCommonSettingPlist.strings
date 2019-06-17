@@ -1,0 +1,141 @@
+"Motion Detection Test Mode" = "Motion Detection Test Mode";
+"Use this when you want to test the camera motion detection sensitivity." = "Use this when you want to test the camera's motion detection sensitivity.";
+"All Devices" = "All Devices";
+"Set motion sensitivity level" = "Set detection sensitivity level";
+"Camera and HomeBase will sound alarm when camera is moved" = "Camera and HomeBase will sound alarm when camera is moved";
+"Micphone" = "Microphone";
+"To" = "To";
+"When sensor is triggered" = "When sensor is triggered";
+"Time Zone" = "Time Zone";
+"IR LED will auto turn on when in the dark or night" = "IR LED will auto turn on when in the dark or night";
+"Check for camera firmware" = "Check for camera firmware";
+"Notification Settings" = "Notification Settings";
+"Smart Detection" = "Smart Detection";
+"Change Server" = "Change Server";
+"Led Switch" = "Led Switch";
+"Repeat" = "Repeat";
+"Away Activation Time" = "Activation Time";
+"Mounting Guide" = "Mounting Guide";
+"NAS(RTSP stream)" = "NAS(RTSP)";
+"Switch" = "Switch";
+"Retrigger interval" = "Retrigger Interval";
+"Detection LED" = "Detection LED";
+"Remove Device" = "Remove Device";
+"Receive News and Product updates" = "Receive News and Product Updates";
+"Living Room" = "Living Room";
+"Enter security name" = "Enter security name";
+"Camera will sound beep and flash red when motion detected and sensitivity adjusted." = "Camera will sound beep and flash red when motion detected and sensitivity adjusted.";
+"Night Vision" = "Night Vision";
+"Bonus Room" = "Bonus Room";
+"Auto Night Vision" = "Auto Night Vision";
+"IP Address" = "IP Address";
+"Password" = "Password";
+"Garage" = "Garage";
+"Push Notification" = "Push Notification";
+"Model No." = "Model No.";
+"AI Version" = "AI Version";
+"Enter security remarks" = "Enter security remarks";
+"Motion Detection Status LED" = "Motion Detection Status LED";
+"Status LED" = "Status LED";
+"Anti-Theft Detection" = "Anti-Theft Detection";
+"App Permissions" = "App Permissions";
+"Hardware Version" = "Hardware Version";
+"Name" = "Name";
+"Side Door" = "Side Door";
+"Select security icon" = "Select security icon";
+"Do the following" = "Then do the following";
+"Outdoor" = "Outdoor";
+"Restart Device" = "Restart Device";
+"End clip early if motion stops" = "End clip early if motion stops ";
+"Camera Alarm" = "Camera Alarm";
+"Select mode" = "Select mode";
+"Check for HomeBase new firmware" = "Check for HomeBase firmware";
+"HomeBase Alarm" = "HomeBase Alarm";
+"Local Storage" = "Local Storage";
+"Motion Detection" = "Motion Detection";
+"Nickname" = "Nickname";
+"Cancellation" = "Delete Account";
+"Email" = "Email";
+"Activity Zone" = "Activity Zone";
+"Camera Working Mode" = "Camera Working Mode";
+"Messages" = "Messages";
+"Speaker" = "Speaker";
+"Serial Number" = "Serial Number";
+"System Version" = "System Version";
+"Sensor sensitivity" = "Sensor sensitivity";
+"Facing Front Door" = "Facing Front Door";
+"Alarm Volume" = "Alarm Volume";
+"Smart Integrations" = "Smart Integrations";
+"Camera On" = "Camera On";
+"From" = "From";
+"Family Room" = "Family Room";
+"Record Video" = "Record Video";
+"Device Info" = "Device Info";
+"Avatar" = "Avatar";
+"Video Settings" = "Video Settings";
+"Clip length" = "Clip length:";
+"When motion is detected" = "When motion is detected";
+"* Battery life will decrease drastically in this mode." = "* Battery life will decrease drastically in this mode.";
+"Play" = "Play";
+"Porch" = "Porch";
+"Backyard" = "Backyard";
+"Status LED will auto turn on when motion detected." = "Status LED will auto turn on when motion detected.";
+"Record Extension Time" = "Record Extension Time";
+"Time Settings" = "Time Settings";
+"Cloud Storage" = "Cloud Storage";
+"Device Display Order" = "Device Display Order";
+"Audio Volume" = "Audio Volume";
+"Indoor" = "Indoor";
+"Front Door" = "Front Door";
+"Video Storage" = "Video Storage";
+"Talk-back, recording sound are disabled." = "Talk-back and recording sound feature are disabled.  ";
+"Firmware Version" = "Firmware Version";
+"Subsystem Version" = "Subsystem Version";
+
+
+//updated
+
+
+//ignored
+"Automatic search" = "Automatic search";
+"Qa Server" = "QA Server";
+"Select Server" = "Select Server";
+"Eu Server" = "EU Server";
+"Us Server" = "US Server";
+"Ci Server" = "CI Server";
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"Floodlight Auto Turn On" = "Light Up";
+"Bright timer when motion stops" = "Bright timer when motion stops";
+"Location Name" = "Location Name";
+"DETAILS" = "DETAILS";
+"Server list" = "Server List";
+"Camera will sound a short alarm when volume changed." = "Camera will sound a short alarm when volume changed.";
+"When dark and night falls" = "When dark and night falls";
+"During Night" = "Night Lamp";
+"SELECT MODE" = "SELECT MODE";
+"When in the night and motion detected" = "When motion detected and at night";
+"Light Schedule" = "Light Schedule";
+
+"Motion for lights" = "Motion for lights";
+"LIGHTS" = "LIGHTS";
+"Timer for Lights" = "Timer for Lights";
+"After motion, keep the lights on for:" = "After motion, keep the lights on for:";
+"When motion detected and at night, lights will turn on for the motion events." = "When motion detected and at night, lights will turn on for the motion events.";
+
+"SELECT MODE" = "SELECT MODE";
+
+"Set light on/off in the following scenes" = "Set light on/off in the following scenes";
+"Brightness" = "Brightness";
+
+"Enabled Devices" = "Enabled Devices";
+"The talk-back, recording sound and sound alarm will be disabled as well." = "The talk-back, recording sound and sound alarm will be disabled as well.";
+"Check for Floodlight new firmware" = "Check for Floodlight new firmware";
+

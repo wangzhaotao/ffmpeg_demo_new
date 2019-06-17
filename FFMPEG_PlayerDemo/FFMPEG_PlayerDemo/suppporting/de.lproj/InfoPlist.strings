@@ -1,0 +1,25 @@
+"CFBundleName" = "eufy Security";
+"CFBundleDisplayName" = "eufy Security";
+
+
+//updated
+"NSPhotoLibraryUsageDescription" = "Wird verwendet, um Videoclips und Schnappschüsse zu speichern, Gesichter hinzuzufügen und Avatare einzurichten.";
+"NSCameraUsageDescription" = "Wird verwendet, um Gesichter hinzuzufügen, QR-Codes zu scannen und Avatare einzurichten.";
+"NSLocationWhenInUseUsageDescription" = "Wird verwendet, um den optimalen Anmeldeserver zu finden.";
+"NSPhotoLibraryAddUsageDescription" = "Wird verwendet, um Videoclips und Schnappschüsse zu speichern.";
+"NSMicrophoneUsageDescription" = "Wird verwendet, um über die App mit der Person vor der Kamera zu sprechen.";
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Eufy Security is requesting your phone\'s location permission for Geofencing.";
+"NSLocationAlwaysUsageDescription" = "Eufy Security is requesting your phone\'s location permission for Geofencing.";
+

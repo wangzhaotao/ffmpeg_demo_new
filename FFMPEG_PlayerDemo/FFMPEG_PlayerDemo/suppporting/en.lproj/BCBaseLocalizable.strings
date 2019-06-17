@@ -1,0 +1,49 @@
+"bc.push.is_closed" = "is closed";
+"bc.push.sdcard_format_fail_tip" = "Failed to format microSD card.";
+"bc.push.someone_is_spotted" = "Someone has been spotted.";
+"bc.push.is_online" = "is online";
+"bc.push.home_base_alarm_pir_or_motion" = "%@ is alarming due to motion detected.";
+"bc.push.home_base_alarm_gsensor" = "%@ is alarming due to camera anti-theft triggered.";
+"bc.push.sdcard_mount_fail_tip" = "Failed to read microSD card.";
+"bc.push.cloud_service_will_expire_warning" = "%1$@cloud storage service will expire in %2$@ %3$@";
+"bc.push.motion_detected" = "Motion detected";
+"bc.push.system_switched" = "The system has been switched to Away mode by %@.";
+"bc.push.nosdcard_tip" = "Please insert a microSD card.";
+"bc.push.system_geofencing" = "Geofencing";
+"bc.push.sdcard_needformat_tip" = "microSD card needs to be formatted for storage encryption.";
+"bc.push.event" = "event";
+"bc.push.system_switched_ex" = "The system has been switched to %@ mode by %@";
+"bc.push.Your_something" = "Your %@ ";
+"bc.push.isopened" = "is opened";
+"bc.push.system_switched_default" = "The system has automatically switched security modes according to the settings";
+"bc.push.detected_stranger" = "Someone has been spotted.";
+"bc.push.system_schedule" = "Schedule";
+"bc.push.system_alarm" = "Sound Alarm is enabled.";
+"bc.push.camera_battery_full" = "Camera is fully charged.";
+"bc.push.sdcard_formatting_tip" = "microSD card is formatting.";
+"bc.push.sdcard_busy_tip" = "microSD card is formatting.";
+"bc.push.home_base_alarm_door" = "%@ is alarming due to sensor triggered.";
+"bc.push.yourcamera" = "Your camera %@'s ";
+"bc.push.lowbattery_tip" = "is in low battery.";
+"bc.push.is_showing_up" = "is arriving.";
+"bc.push.cam_overheating_tip" = "is overheating.";
+"bc.push.gsensor_triggered_tip" = "Attention! Someone is moving the camera %@";
+"bc.push.sdcard_format_suc_tip" = "microSD card formatted successfully.";
+"bc.push.is_offline" = "is offline";
+
+
+//updated
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"bc.push.home_base_alarm_hot" = "HomeBase %@ is alarming due to camera is high temperature.";
+

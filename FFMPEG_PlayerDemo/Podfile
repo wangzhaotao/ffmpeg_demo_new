@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'FFMPEG_PlayerDemo' do
+
+  pod 'Masonry'
+  #pod 'AFNetworking'
+  #pod 'MJRefresh'
+  
+  #Firebase 远程配置
+  #pod 'Firebase/Core'
+  #pod 'Firebase/RemoteConfig'
+
+end
+

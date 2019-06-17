@@ -1,0 +1,49 @@
+"bc.push.system_geofencing" = "Geofencing";
+
+
+//updated
+"bc.push.is_closed" = "è chiuso";
+"bc.push.sdcard_format_fail_tip" = "Impossibile formattare la scheda MicroSD.";
+"bc.push.someone_is_spotted" = "È stata rilevata una presenza.";
+"bc.push.is_online" = "è online";
+"bc.push.home_base_alarm_pir_or_motion" = "L'unità %@ è in allarme per rilevamento di movimento.";
+"bc.push.home_base_alarm_gsensor" = "L'unità %@ è in allarme per l'attivazione del sistema antifurto della telecamera.";
+"bc.push.sdcard_mount_fail_tip" = "Impossibile leggere la scheda microSD.";
+"bc.push.cloud_service_will_expire_warning" = "%1$Il servizio di archiviazione cloud @ scade tra %2$@ %3$@";
+"bc.push.motion_detected" = "Rilevato movimento";
+"bc.push.system_switched" = "Il sistema è passato alla modalità Fuori casa in base alla %@.";
+"bc.push.nosdcard_tip" = "Inserire una scheda MicroSD.";
+"bc.push.sdcard_needformat_tip" = "La scheda microSD deve essere formattata per la crittografia dello spazio di archiviazione.";
+"bc.push.event" = "evento";
+"bc.push.system_switched_ex" = "Il sistema è passato alla modalità %@ in base alla %@";
+"bc.push.Your_something" = "La scheda microSD %@";
+"bc.push.isopened" = "è aperto";
+"bc.push.system_switched_default" = "Il sistema ha commutato automaticamente le modalità di sicurezza in base alle impostazioni";
+"bc.push.detected_stranger" = "È stata rilevata una presenza.";
+"bc.push.system_schedule" = "Programma";
+"bc.push.system_alarm" = "Il sistema è passato alla modalità Fuori casa in base al geofencing.";
+"bc.push.camera_battery_full" = "La telecamera è completamente carica.";
+"bc.push.sdcard_formatting_tip" = "è in fase di formattazione.";
+"bc.push.sdcard_busy_tip" = "La scheda microSD è in fase di formattazione.";
+"bc.push.home_base_alarm_door" = "L'unità %@ è in allarme per l'attivazione di un sensore.";
+"bc.push.yourcamera" = "Il %@ della telecamera";
+"bc.push.lowbattery_tip" = "ha la batteria quasi scarica.";
+"bc.push.is_showing_up" = "è in arrivo.";
+"bc.push.cam_overheating_tip" = "si sta surriscaldando.";
+"bc.push.gsensor_triggered_tip" = "Attenzione. Qualcuno sta spostando la telecamera %@";
+"bc.push.sdcard_format_suc_tip" = "Formattazione della scheda microSD completata.";
+"bc.push.is_offline" = "è offline";
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"bc.push.home_base_alarm_hot" = "HomeBase %@ is alarming due to camera is high temperature.";
+

@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  FFMPEG_PlayerDemo
+//
+//  Created by tyler on 4/28/19.
+//  Copyright © 2019 ocean. All rights reserved.
+//
+
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+
+#ifdef DEBUG
+  #define iLog(...) NSLog(__VA_ARGS__)
+
+#else
+  #define iLog(...)
+
+#endif
+
+
+#define iScreen [UIScreen mainScreen]
+#define iScreenW iScreen.bounds.size.width
+#define iScreenH iScreen.bounds.size.height
+#define iBundle [NSBundle mainBundle]
+
+
+#define iFont(size) [UIFont systemFontOfSize:(size)]
+#define iBFont(size) [UIFont boldSystemFontOfSize:(size)]
+
+
+
+#define iFormatStr(...) ([NSString stringWithFormat:__VA_ARGS__])
+
+
+
+
+#endif /* PrefixHeader_pch */

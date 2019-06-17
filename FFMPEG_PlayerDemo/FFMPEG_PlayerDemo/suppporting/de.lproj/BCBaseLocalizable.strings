@@ -1,0 +1,49 @@
+"bc.push.system_geofencing" = "Geofencing";
+
+
+//updated
+"bc.push.is_closed" = "wurde geschlossen";
+"bc.push.sdcard_format_fail_tip" = "Die microSD-Karte konnte nicht formatiert werden.";
+"bc.push.someone_is_spotted" = "Eine Person wurde entdeckt.";
+"bc.push.is_online" = "ist online";
+"bc.push.home_base_alarm_pir_or_motion" = "%@ gibt einen Alarm aus, weil eine Bewegung erkannt wurde.";
+"bc.push.home_base_alarm_gsensor" = "%@ gibt einen Alarm aus, weil der Diebstahlschutz der Kamera ausgelöst wurde.";
+"bc.push.sdcard_mount_fail_tip" = "Die microSD-Karte konnte nicht gelesen werden.";
+"bc.push.cloud_service_will_expire_warning" = "%1$@Cloud-Speicherdienst läuft in %2$@ %3$@ ab.";
+"bc.push.motion_detected" = "Bewegung erkannt";
+"bc.push.system_switched" = "Das System ist gemäß %@ in den Modus „Abwesend“ gewechselt. ";
+"bc.push.nosdcard_tip" = "Bitte eine microSD-Karte einlegen.";
+"bc.push.sdcard_needformat_tip" = "Die microSD-Karte muss für die Speicherverschlüsselung formatiert werden.";
+"bc.push.event" = "Ereignis";
+"bc.push.system_switched_ex" = "Das System ist gemäß %@ in den Modus %@ gewechselt";
+"bc.push.Your_something" = "Ihre %@";
+"bc.push.isopened" = "wurde geöffnet";
+"bc.push.system_switched_default" = "Das System hat den Sicherheitsmodus automatisch gemäß den Einstellungen umgestellt";
+"bc.push.detected_stranger" = "Eine Person wurde entdeckt.";
+"bc.push.system_schedule" = "Zeitplan";
+"bc.push.system_alarm" = "Das System ist gemäß Geofencing in den Modus „Abwesend“ gewechselt.";
+"bc.push.camera_battery_full" = "Die Kamera ist vollständig aufgeladen.";
+"bc.push.sdcard_formatting_tip" = "Die microSD-Karte wird formatiert.";
+"bc.push.sdcard_busy_tip" = "Die microSD-Karte wird formatiert.";
+"bc.push.home_base_alarm_door" = "%@ gibt einen Alarm aus, weil ein Sensor ausgelöst wurde.";
+"bc.push.yourcamera" = "Ihre Kamera %@";
+"bc.push.lowbattery_tip" = "hat einen schwachen Akku.";
+"bc.push.is_showing_up" = "nähert sich.";
+"bc.push.cam_overheating_tip" = "überhitzt.";
+"bc.push.gsensor_triggered_tip" = "Achtung! Die Kamera %@ wurde bewegt";
+"bc.push.sdcard_format_suc_tip" = "Die microSD-Karte wurde formatiert.";
+"bc.push.is_offline" = "ist offline";
+
+
+//ignored
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"bc.push.home_base_alarm_hot" = "HomeBase %@ is alarming due to camera is high temperature.";
+

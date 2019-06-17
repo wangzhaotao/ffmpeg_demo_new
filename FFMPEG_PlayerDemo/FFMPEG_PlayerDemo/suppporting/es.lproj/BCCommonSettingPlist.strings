@@ -1,0 +1,131 @@
+"NAS(RTSP stream)" = "NAS(RTSP)";
+"Avatar" = "Avatar";
+
+
+//updated
+"Motion Detection Test Mode" = "Modo de prueba de detección de movimiento";
+"Use this when you want to test the camera motion detection sensitivity." = "Utilice esta opción si desea probar la sensibilidad de detección de movimiento de la cámara.";
+"All Devices" = "Todos los dispositivos";
+"Set motion sensitivity level" = "Definir nivel de sensibilidad de detección";
+"Camera and HomeBase will sound alarm when camera is moved" = "La cámara y la HomeBase harán sonar la alarma si la cámara se mueve";
+"Micphone" = "Micrófono";
+"To" = "A";
+"When sensor is triggered" = "Cuando se activa un sensor";
+"Time Zone" = "Zona horaria";
+"IR LED will auto turn on when in the dark or night" = "El LED de infrarrojos se activará automáticamente por la noche o en la oscuridad";
+"Check for camera firmware" = "Buscar firmware para la cámara";
+"Notification Settings" = "Ajustes de notificaciones";
+"Smart Detection" = "Detección inteligente";
+"Change Server" = "Cambiar servidor";
+"Led Switch" = "Interruptor LED";
+"Repeat" = "Repetir";
+"Away Activation Time" = "Hora de activación";
+"Mounting Guide" = "Guía de montaje";
+"Switch" = "Interruptor";
+"Retrigger interval" = "Intervalo de reactivación:";
+"Detection LED" = "LED de detección";
+"Remove Device" = "Eliminar dispositivo";
+"Receive News and Product updates" = "Recibir noticias y actualizaciones del producto";
+"Living Room" = "Sala de estar";
+"Enter security name" = "Introducir nombre de seguridad";
+"Camera will sound beep and flash red when motion detected and sensitivity adjusted." = "La cámara emitirá un pitido y parpadeará en rojo cuando se detecte movimiento y se ajuste la sensibilidad.";
+"Night Vision" = "Visión nocturna";
+"Bonus Room" = "Habitación extra";
+"Auto Night Vision" = "Visión nocturna automática";
+"IP Address" = "Dirección IP";
+"Password" = "Contraseña";
+"Garage" = "Garaje";
+"Push Notification" = "Notificación push";
+"Model No." = "N.º de modelo";
+"AI Version" = "Versión de la IA";
+"Enter security remarks" = "Introducir notas de seguridad";
+"Motion Detection Status LED" = "LED de estado para detección de movimiento";
+"Status LED" = "LED de estado para detección de movimiento";
+"Anti-Theft Detection" = "Detección antirrobo";
+"App Permissions" = "Permisos de la aplicación";
+"Hardware Version" = "Versión de hardware";
+"Name" = "Nombre";
+"Side Door" = "Puerta lateral";
+"Select security icon" = "Seleccionar icono de seguridad";
+"Do the following" = "Hacer lo siguiente";
+"Outdoor" = "Exteriores";
+"Restart Device" = "Reiniciar dispositivo";
+"End clip early if motion stops" = "Finalizar clip si se detiene el movimiento";
+"Camera Alarm" = "Alarma de la cámara";
+"Select mode" = "Seleccionar modo";
+"Check for HomeBase new firmware" = "Buscar firmware para la HomeBase";
+"HomeBase Alarm" = "Alarma de la HomeBase";
+"Local Storage" = "Almacenamiento local";
+"Motion Detection" = "Detección de movimiento";
+"Nickname" = "Apodo";
+"Cancellation" = "Cancelada";
+"Email" = "Correo electrónico";
+"Activity Zone" = "Zona de actividad";
+"Camera Working Mode" = "Modo de funcionamiento de la cámara";
+"Messages" = "Mensajes";
+"Speaker" = "Altavoz";
+"Serial Number" = "Número de serie";
+"System Version" = "Versión del sistema";
+"Sensor sensitivity" = "Sensibilidad del sensor";
+"Facing Front Door" = "Frente a la puerta delantera";
+"Alarm Volume" = "Volumen de la alarma";
+"Smart Integrations" = "Integraciones inteligentes";
+"Camera On" = "Cámara activada";
+"From" = "De";
+"Family Room" = "Salón";
+"Record Video" = "Grabar vídeo";
+"Device Info" = "Información del dispositivo";
+"Video Settings" = "Configuración de vídeo";
+"Clip length" = "Longitud del clip:";
+"When motion is detected" = "Cuando se detecta movimiento";
+"* Battery life will decrease drastically in this mode." = "* La duración de la pila disminuirá drásticamente en este modo.";
+"Play" = "Reproducir";
+"Porch" = "Porche";
+"Backyard" = "Patio";
+"Status LED will auto turn on when motion detected." = "El LED de estado se activará automáticamente cuando se detecte movimiento.";
+"Record Extension Time" = "Tiempo extra de grabación";
+"Time Settings" = "Ajustes de hora";
+"Cloud Storage" = "Almacenamiento en la nube";
+"Device Display Order" = "Dispositivos de clasificación";
+"Audio Volume" = "Volumen de audio";
+"Indoor" = "Interior";
+"Front Door" = "Puerta principal";
+"Video Storage" = "Almacenamiento de vídeo";
+"Talk-back, recording sound are disabled." = "Se han desactivado las funciones de respuesta y grabación de sonido.";
+"Firmware Version" = "Versión de firmware";
+"Subsystem Version" = "Versión del subsistema";
+
+
+//ignored
+"Automatic search" = "Automatic search";
+"Qa Server" = "QA Server";
+"Select Server" = "Select Server";
+"Eu Server" = "EU Server";
+"Us Server" = "US Server";
+"Ci Server" = "CI Server";
+
+
+//notrans
+
+
+//added
+
+
+//deleted
+"Floodlight Auto Turn On" = "Light Up";
+"Bright timer when motion stops" = "Bright timer when motion stops";
+"Location Name" = "Location Name";
+"DETAILS" = "DETAILS";
+"Server list" = "Server List";
+"Camera will sound a short alarm when volume changed." = "Camera will sound a short alarm when volume changed.";
+"When dark and night falls" = "When dark and night falls";
+"During Night" = "Night Lamp";
+"SELECT MODE" = "SELECT MODE";
+"When in the night and motion detected" = "When motion detected and at night";
+"Light Schedule" = "Light Schedule";
+"Set light on/off in the following scenes" = "Set light on/off in the following scenes";
+"Brightness" = "Brightness";
+"Enabled Devices" = "Enabled Devices";
+"The talk-back, recording sound and sound alarm will be disabled as well." = "The talk-back, recording sound and sound alarm will be disabled as well.";
+"Check for Floodlight new firmware" = "Check for Floodlight new firmware";
+
