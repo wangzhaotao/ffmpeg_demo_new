@@ -20,6 +20,14 @@
 			<key>title</key>
 			<string>直播列表界面</string>
 		</dict>
+		<dict>
+			<key>vc</key>
+			<string>WTTestVC4</string>
+			<key>method</key>
+			<string>clickCellAction:</string>
+			<key>title</key>
+			<string>FFmpeg截图-切换分辨率崩溃</string>
+		</dict>
 	</array>
 </dict>
 </plist>
