@@ -11,6 +11,11 @@
 		7BF0A151227D316A005BF7F4 /* WTPlayerVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0A150227D316A005BF7F4 /* WTPlayerVC2.m */; };
 		7BF0A154227D32CF005BF7F4 /* WTMediaDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0A153227D32CF005BF7F4 /* WTMediaDecoder.m */; };
 		8E017C1222A770C700EEA4CD /* WTTestVC4.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E017C1122A770C700EEA4CD /* WTTestVC4.m */; };
+		8E0ACCAB22D5D320007FBEFD /* WTPlayer7VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ACCAA22D5D320007FBEFD /* WTPlayer7VC.m */; };
+		8E0ACCAE22D5D363007FBEFD /* WTMediaDecode7.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ACCAD22D5D363007FBEFD /* WTMediaDecode7.m */; };
+		8E0ACCB122D5E984007FBEFD /* WTMediaPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ACCB022D5E984007FBEFD /* WTMediaPlayView.m */; };
+		8E0ACCB722D5F6AF007FBEFD /* WTAudioQueuePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ACCB622D5F6AF007FBEFD /* WTAudioQueuePlay.m */; };
+		8E0ACCBA22D5FB08007FBEFD /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ACCB922D5FB08007FBEFD /* OpenglView.m */; };
 		8E1DC15122B3B78100660169 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1DC14A22B3B78100660169 /* libavutil.a */; };
 		8E1DC15222B3B78100660169 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1DC14B22B3B78100660169 /* libavfilter.a */; };
 		8E1DC15322B3B78100660169 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1DC14C22B3B78100660169 /* libavcodec.a */; };
@@ -94,6 +99,16 @@
 		7DE343B41D66FF58D26E6A2F /* Pods-FFMPEG_PlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFMPEG_PlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-FFMPEG_PlayerDemo/Pods-FFMPEG_PlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8E017C1022A770C700EEA4CD /* WTTestVC4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTTestVC4.h; sourceTree = "<group>"; };
 		8E017C1122A770C700EEA4CD /* WTTestVC4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTTestVC4.m; sourceTree = "<group>"; };
+		8E0ACCA922D5D320007FBEFD /* WTPlayer7VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTPlayer7VC.h; sourceTree = "<group>"; };
+		8E0ACCAA22D5D320007FBEFD /* WTPlayer7VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTPlayer7VC.m; sourceTree = "<group>"; };
+		8E0ACCAC22D5D363007FBEFD /* WTMediaDecode7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMediaDecode7.h; sourceTree = "<group>"; };
+		8E0ACCAD22D5D363007FBEFD /* WTMediaDecode7.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMediaDecode7.m; sourceTree = "<group>"; };
+		8E0ACCAF22D5E984007FBEFD /* WTMediaPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMediaPlayView.h; sourceTree = "<group>"; };
+		8E0ACCB022D5E984007FBEFD /* WTMediaPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMediaPlayView.m; sourceTree = "<group>"; };
+		8E0ACCB522D5F6AF007FBEFD /* WTAudioQueuePlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAudioQueuePlay.h; sourceTree = "<group>"; };
+		8E0ACCB622D5F6AF007FBEFD /* WTAudioQueuePlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAudioQueuePlay.m; sourceTree = "<group>"; };
+		8E0ACCB822D5FB08007FBEFD /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
+		8E0ACCB922D5FB08007FBEFD /* OpenglView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglView.m; sourceTree = "<group>"; };
 		8E1DC0E722B3B78100660169 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		8E1DC0E822B3B78100660169 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		8E1DC0E922B3B78100660169 /* buffersrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffersrc.h; sourceTree = "<group>"; };
@@ -352,6 +367,23 @@
 			path = Test4;
 			sourceTree = "<group>";
 		};
+		8E0ACCA822D5D2F1007FBEFD /* WTPlayer7 */ = {
+			isa = PBXGroup;
+			children = (
+				8E0ACCA922D5D320007FBEFD /* WTPlayer7VC.h */,
+				8E0ACCAA22D5D320007FBEFD /* WTPlayer7VC.m */,
+				8E0ACCAF22D5E984007FBEFD /* WTMediaPlayView.h */,
+				8E0ACCB022D5E984007FBEFD /* WTMediaPlayView.m */,
+				8E0ACCAC22D5D363007FBEFD /* WTMediaDecode7.h */,
+				8E0ACCAD22D5D363007FBEFD /* WTMediaDecode7.m */,
+				8E0ACCB822D5FB08007FBEFD /* OpenglView.h */,
+				8E0ACCB922D5FB08007FBEFD /* OpenglView.m */,
+				8E0ACCB522D5F6AF007FBEFD /* WTAudioQueuePlay.h */,
+				8E0ACCB622D5F6AF007FBEFD /* WTAudioQueuePlay.m */,
+			);
+			path = WTPlayer7;
+			sourceTree = "<group>";
+		};
 		8E1DC0E422B3B78100660169 /* FFmpeg */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +595,7 @@
 				8E786176228EB071009EC8F1 /* Libs */,
 				8EC90FFA227F092800794FF0 /* Utils */,
 				8E5CC59921411F3800CA954A /* Muxer2Mp4 */,
+				8E0ACCA822D5D2F1007FBEFD /* WTPlayer7 */,
 				8E48FBBC22B2390F005D93BD /* WTPlayer6_Filte */,
 				8E4BF02022AF55CC00235012 /* WTPlayer5_Filte */,
 				8E017C0F22A770A200EEA4CD /* Test4 */,
@@ -1000,15 +1033,19 @@
 				8E78618F228EB267009EC8F1 /* KxMovieViewController.m in Sources */,
 				8EF6492A22A7C60200651878 /* NSDate+Ex.m in Sources */,
 				8E78616F228E82C8009EC8F1 /* BCAudioQueuePlay.m in Sources */,
+				8E0ACCAE22D5D363007FBEFD /* WTMediaDecode7.m in Sources */,
 				8E77F28822B24D010035C76F /* NSString+Ex.m in Sources */,
 				8E5CC5A221411FC500CA954A /* MyMuxer2Pm4.c in Sources */,
 				7BF0A151227D316A005BF7F4 /* WTPlayerVC2.m in Sources */,
+				8E0ACCB122D5E984007FBEFD /* WTMediaPlayView.m in Sources */,
 				7BF0A154227D32CF005BF7F4 /* WTMediaDecoder.m in Sources */,
 				8E81DEA322AF568000272B61 /* WTPlayerVC5.m in Sources */,
 				8EC90FFD227F094000794FF0 /* Utils.m in Sources */,
 				8E8C66D122A0D9820001B71C /* WTVideoFilter.m in Sources */,
 				8E77F29222B262440035C76F /* WTMultiMediaTool.c in Sources */,
+				8E0ACCAB22D5D320007FBEFD /* WTPlayer7VC.m in Sources */,
 				8E81DEA722AF579800272B61 /* WTVideoFilterPure.m in Sources */,
+				8E0ACCB722D5F6AF007FBEFD /* WTAudioQueuePlay.m in Sources */,
 				8E48FBBF22B239AB005D93BD /* WTPlayFilte6VC.m in Sources */,
 				8E5CC5A52141209800CA954A /* streamMuxer.cpp in Sources */,
 				8EB3FA4022769978001CF59D /* WTMoviePlayerVC.m in Sources */,
@@ -1021,6 +1058,7 @@
 				8E78618D228EB267009EC8F1 /* KxAudioManager.m in Sources */,
 				8E786167228E8142009EC8F1 /* WTPlayerVC3.m in Sources */,
 				8E78618E228EB267009EC8F1 /* KxMovieDecoder.m in Sources */,
+				8E0ACCBA22D5FB08007FBEFD /* OpenglView.m in Sources */,
 				8E786175228EA1CF009EC8F1 /* AACDecoder.m in Sources */,
 				8E5CC5A82141229F00CA954A /* MuxerMp4Object.mm in Sources */,
 				8E1FDB23212404C000D1BB42 /* AppDelegate.m in Sources */,

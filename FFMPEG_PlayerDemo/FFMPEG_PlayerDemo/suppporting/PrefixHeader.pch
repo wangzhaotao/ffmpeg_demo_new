@@ -38,5 +38,14 @@
 
 
 
+#define iColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define iiColor(hex, a) [UIColor colorWithRed:((hex>>4*sizeof(hex))&0xff)/255.0 green:((hex>>2*sizeof(hex))&0xff)/255.0 blue:(hex&0xff)/255.0 alpha:(a)]
+
+#define iGlobalBG iColor(246,246,246,1)
+#define iGlobalBG2 iColor(0xfc,0xfc,0xfc,1)
+#define iCommonSeparatorColor iColor(0xe8,0xe8,0xe8,1)
+#define iGlobalOrange iColor(0xff,0x73,0x0a,1)
+
+
 
 #endif /* PrefixHeader_pch */
