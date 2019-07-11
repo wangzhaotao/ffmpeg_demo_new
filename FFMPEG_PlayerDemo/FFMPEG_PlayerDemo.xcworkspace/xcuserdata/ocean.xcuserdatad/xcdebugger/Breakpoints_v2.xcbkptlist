@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.706358"
+            timestampString = "584538618.902703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "469"
@@ -182,7 +182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer2/WTMediaDecoder.m"
@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer2/WTMediaDecoder.m"
@@ -208,6 +208,22 @@
             startingLineNumber = "144"
             endingLineNumber = "144"
             landmarkName = "-openMediaWithPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
+            timestampString = "584538618.90546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
+            landmarkName = "-decodeFrames:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

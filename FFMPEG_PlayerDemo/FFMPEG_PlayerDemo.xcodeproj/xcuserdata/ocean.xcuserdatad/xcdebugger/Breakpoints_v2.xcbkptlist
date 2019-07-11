@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.703425"
+            timestampString = "584538618.903173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.703931"
+            timestampString = "584538618.903504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "337"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.704262"
+            timestampString = "584538618.903824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "371"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.704646"
+            timestampString = "584538618.904109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "335"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.705024"
+            timestampString = "584538618.9043911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "369"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.70532"
+            timestampString = "584538618.904704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "677"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.705579"
+            timestampString = "584538618.9049881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "515"
@@ -224,22 +224,6 @@
             startingLineNumber = "270"
             endingLineNumber = "270"
             landmarkName = "-renderFrames:ioData:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FFMPEG_PlayerDemo/kxmovie/KxMovieDecoder.m"
-            timestampString = "584352390.705971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
-            landmarkName = "-decodeFrames:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

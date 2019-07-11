@@ -11,6 +11,9 @@
 #import "OpenglView.h"
 #import "WTMediaDecode7.h"
 
+#define NETWORK_MIN_Data_BUFFERED_DURATION 2.0
+#define NETWORK_MAX_Data_BUFFERED_DURATION 4.0
+
 @interface WTMediaPlayView ()
 {
     //播放队列
@@ -18,6 +21,9 @@
     //缓冲数据帧
     NSMutableArray      *_videoFrames;
     NSMutableArray      *_audioFrames;
+    
+    CGFloat             _minBufferedDuration;
+    CGFloat             _maxBufferedDuration;
 }
 @property (nonatomic, strong) WTAudioQueuePlay *pcmPalyer;
 @property (nonatomic, strong) OpenglView *openglview;
@@ -25,7 +31,7 @@
 @property (nonatomic, strong) WTMediaDecode7 *mediaDecoder;
 
 @property (nonatomic, assign) BOOL isPlaying;
-
+@property (nonatomic, assign) BOOL isDecoding;
 
 @end
 
@@ -40,12 +46,6 @@
 -(instancetype)initWithVideo:(NSString *)moviePath {
     
     if (self = [super init]) {
-        
-        //初始化音频播放器
-        [self.pcmPalyer class];
-        
-        //创建播放界面
-        [self setupPlayView];
         
         //
         [self inner_initMediaPlayWithPath:moviePath];
@@ -66,21 +66,55 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [strongSelf startPlayMovie];
+                [strongSelf initPlayBuffer];
+                
+                [strongSelf play];
             });
         }
     });
 }
 
--(void)startPlayMovie {
+-(void)initPlayBuffer {
     
     _dispatchQueue = dispatch_queue_create("KxMovie", DISPATCH_QUEUE_SERIAL);
+    _videoFrames = [NSMutableArray array];
+    _audioFrames = [NSMutableArray array];
     
+    _minBufferedDuration = NETWORK_MIN_Data_BUFFERED_DURATION;
+    _maxBufferedDuration = NETWORK_MAX_Data_BUFFERED_DURATION;
+    
+    _minBufferedDuration *= 10;
+    _maxBufferedDuration = _minBufferedDuration*2;
+    
+    //创建播放界面
+    [self setupPlayView];
 }
 
 #pragma mark 播放控制
 -(void)play {
     
+    if (self.isPlaying) {
+        return;
+    }
+    
+    if (!self.mediaDecoder.validVideo && !self.mediaDecoder.validAudio) {
+        return;
+    }
+    
+    //解码帧数据
+    [self asynDecodeFrames];
+    
+    //循环渲染、解码
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.1*NSEC_PER_SEC);
+    dispatch_after(popTime, _dispatchQueue, ^{
+        [self tick];
+    });
+    
+    
+    if (self.mediaDecoder.validAudio) {
+        //初始化音频播放器
+        [self.pcmPalyer class];
+    }
 }
 
 -(void)stop {
@@ -91,8 +125,55 @@
     }
 }
 
+#pragma mark private methdos
+-(void)asynDecodeFrames {
+    
+    if (self.isDecoding) {
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    self.isDecoding = YES;
+    dispatch_async(_dispatchQueue, ^{
+        
+        if (!weakSelf || !weakSelf.isPlaying) {
+            weakSelf.isDecoding = NO;
+            return;
+        }
+        
+        __strong WTMediaPlayView *strongSelf = weakSelf;
+        BOOL good = YES;
+        while (good) {
+            good = NO;
+            
+            @autoreleasepool {
+                if (strongSelf && (strongSelf.mediaDecoder.validVideo||strongSelf.mediaDecoder.validAudio)) {
+                    
+                    NSArray *frames = [strongSelf.mediaDecoder decodeFrames];
+                    
+                    good = [strongSelf addFrames:frames];
+                }
+            }
+        }
+        
+        if (strongSelf) {
+            strongSelf.isDecoding = NO;
+        }
+    });
+}
+-(void)tick {
+    
+    
+}
 
-#pragma mark private methods
+-(BOOL)addFrames:(NSArray*)frames {
+    
+    
+    
+    return YES;
+}
+
+#pragma mark init methods
 -(WTAudioQueuePlay *)pcmPalyer{
     if (!_pcmPalyer) {
         _pcmPalyer=[[WTAudioQueuePlay alloc] initWithSampleRate:kAudioSampleRate channel:kAudioChannel];

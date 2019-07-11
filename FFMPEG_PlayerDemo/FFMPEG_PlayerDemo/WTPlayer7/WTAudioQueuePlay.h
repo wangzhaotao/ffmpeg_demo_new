@@ -10,7 +10,7 @@
 
 #define kAudioSampleRate 16000
 #define kAudioBitRate 32000
-#define kAudioChannel 2
+#define kAudioChannel 1
 
 
 @interface WTAudioQueuePlay : NSObject
