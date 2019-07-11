@@ -168,7 +168,25 @@
 
 -(BOOL)addFrames:(NSArray*)frames {
     
+    if ([self.mediaDecoder validVideo]) {
+        @synchronized (_videoFrames) {
+            for (WTMediaFrame *frame in frames) {
+                if (frame.type == WTMediaTypeVideo) {
+                    [_videoFrames addObject:frame];
+                }
+            }
+        }
+    }
     
+    if ([self.mediaDecoder validAudio]) {
+        @synchronized (_audioFrames) {
+            for (WTMediaFrame *frame in frames) {
+                if (frame.type == WTMediaTypeAudio) {
+                    [_audioFrames addObject:frame];
+                }
+            }
+        }
+    }
     
     return YES;
 }
