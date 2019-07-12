@@ -6,6 +6,14 @@
 	<array>
 		<dict>
 			<key>vc</key>
+			<string>WTPlayer7VC</string>
+			<key>title</key>
+			<string>FFmpeg音视频解码同步</string>
+			<key>method</key>
+			<string>clickCellAction:</string>
+		</dict>
+		<dict>
+			<key>vc</key>
 			<string>WTPlayFilte6VC</string>
 			<key>method</key>
 			<string>clickCellAction:</string>

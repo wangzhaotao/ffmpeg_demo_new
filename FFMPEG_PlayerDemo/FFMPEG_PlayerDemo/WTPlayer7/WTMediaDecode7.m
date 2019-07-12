@@ -14,6 +14,28 @@
 #import <Accelerate/Accelerate.h>
 #import "NSString+Ex.h"
 
+static void FFLog_wzt(void* context, int level, const char* format, va_list args) {
+    @autoreleasepool {
+        //Trim time at the beginning and new line at the end
+        NSString* message = [[NSString alloc] initWithFormat: [NSString stringWithUTF8String: format] arguments: args];
+        switch (level) {
+            case 0:
+            case 1:
+                NSLog(@"%@", [message stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]);
+                break;
+            case 2:
+                NSLog(@"%@", [message stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]);
+                break;
+            case 3:
+            case 4:
+                NSLog(@"%@", [message stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]);
+                break;
+            default:
+                NSLog(@"%@", [message stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]);
+                break;
+        }
+    }
+}
 
 static void avStreamFPSTimeBase_wzt(AVStream *st, CGFloat defaultTimeBase, CGFloat *pFPS, CGFloat *pTimeBase) {
     
@@ -67,7 +89,7 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     CGFloat             _videoTimeBase;
     CGFloat             _audioTimeBase;
     
-    SwrContext          *_swrContex;
+    SwrContext          *_swrContext;
     void                *_swrBuffer;
     NSUInteger          _swrBufferSize;
 }
@@ -90,12 +112,10 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
         return nil;
     }
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        int error = [self inner_initWithVideo:moviePath];
-        if (error!=0) {
-            NSLog(@"播放失败....");
-        }
-    });
+    int error = [self inner_initWithVideo:moviePath];
+    if (error!=0) {
+        NSLog(@"播放失败....");
+    }
     
     return self;
 }
@@ -108,7 +128,7 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     return _audioStream != -1;
 }
 
--(NSArray*)decodeFrames:(float)duration {
+-(NSArray*)decodeFrames:(float)minDuration {
     
     if (![self validAudio] && ![self validVideo]) {
         return nil;
@@ -119,6 +139,7 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     
     NSMutableArray *result = [NSMutableArray array];
     AVPacket packet;
+    CGFloat decodeDuration = 0;
     BOOL finished = NO;
     while (!finished) {
         
@@ -155,8 +176,9 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
                     NSMutableData *dataYUV = [NSMutableData dataWithLength:frameLen];
                     Byte *yuvBytes = dataYUV.mutableBytes;
                     memcpy(yuvBytes, _videoFrame->data[0], w0*height);
-                    memcpy(yuvBytes+w0*height, _videoFrame->data[1], w1*height);
-                    memcpy(yuvBytes+w0*height+w1*height, _videoFrame->data[2], w2*height);
+                    memcpy(yuvBytes+w0*height, _videoFrame->data[1], w1*height/2);
+                    memcpy(yuvBytes+w0*height+w1*height, _videoFrame->data[2], w2*height/2);
+                    
                     
                     WTVideoFrame *videoFrame = [[WTVideoFrame alloc]init];
                     videoFrame.dataYUV = dataYUV;
@@ -179,6 +201,11 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
                         }
                         
                         [result addObject:videoFrame];
+                        
+                        decodeDuration += videoFrame.duration;
+                        if (decodeDuration>minDuration) {
+                            finished = YES;
+                        }
                     }
                     
                 }
@@ -209,11 +236,11 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
                         [result addObject:frame];
                         
                         if (_videoStream == -1) {
-//                            _position = frame.position;
-//                            decodeDuration += frame.duration;
-//                            if (decodeDuration>minDuration) {
-//                                finished = YES;
-//                            }
+                            //_position = frame.position;
+                            decodeDuration += frame.duration;
+                            if (decodeDuration>minDuration) {
+                                finished = YES;
+                            }
                         }
                     }
                 }
@@ -240,7 +267,7 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     const NSUInteger numChannels = kAudioChannel;
     NSUInteger numFrames;
     void *audioData;
-    if (_swrContex) {
+    if (_swrContext) {
         
         const NSUInteger ratio = MAX(1, kAudioSampleRate/_audioCodecCtx->sample_rate)*MAX(1, numChannels / _audioCodecCtx->channels)*2;
         const int bufSize = av_samples_get_buffer_size(NULL,
@@ -254,7 +281,7 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
         }
         
         Byte *outbuf[2] = {_swrBuffer, 0};
-        numFrames = swr_convert(_swrContex,
+        numFrames = swr_convert(_swrContext,
                                 outbuf,
                                 _audioFrame->nb_samples*ratio,
                                 (const uint8_t **)_audioFrame->data,
@@ -301,10 +328,14 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     if (isNetwork) {
         avformat_network_init();
     }
+    av_log_set_callback(FFLog_wzt);
+    av_register_all();
+    avformat_network_init();
     
     //1.
     AVFormatContext *avFormatCtx = NULL;
     int err_code = avformat_open_input(&avFormatCtx, [moviePath cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL);
+    
     if (err_code<0) {
         NSLog(@"打开多媒体资源失败....");
         if (avFormatCtx) {
@@ -399,11 +430,11 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
     avStreamFPSTimeBase_wzt(st2, 0.04, &_fps, &_audioTimeBase);
     
     //3.2.4
-    SwrContext *swrContex = NULL;
+    SwrContext *swrContext = NULL;
     if (!audioCodecIsSupported_wzt(_audioCodecCtx)) {
-        NSLog(@"11audio-channels: %d, audio-sample: %f", kAudioChannel, kAudioSampleRate);
-        NSLog(@"11codec-channels: %d, codec-fmt: %d, codec-sample: %d", _audioCodecCtx->sample_fmt, _audioCodecCtx->channels, _audioCodecCtx->sample_rate);
-        swrContex = swr_alloc_set_opts(NULL,
+        NSLog(@"11audio-channels: %d, audio-sample: %d", kAudioChannel, kAudioSampleRate);
+        NSLog(@"11codec-channels: %d, codec-fmt: %d, codec-sample: %d", _audioCodecCtx->channels, _audioCodecCtx->sample_fmt, _audioCodecCtx->sample_rate);
+        swrContext = swr_alloc_set_opts(NULL,
                                        av_get_default_channel_layout(kAudioChannel),
                                        AV_SAMPLE_FMT_S16,
                                        kAudioSampleRate,
@@ -412,16 +443,16 @@ static BOOL audioCodecIsSupported_wzt(AVCodecContext *audioCodecCtx) {
                                        _audioCodecCtx->sample_rate,
                                        0,
                                        NULL);
-        if (!swrContex || swr_init(swrContex)) {
-            if (swrContex) {
-                swr_free(&swrContex);
+        if (!swrContext || swr_init(swrContext)) {
+            if (swrContext) {
+                swr_free(&swrContext);
             }
             avcodec_close(_audioCodecCtx);
             
             return -1;
         }
     }
-    _swrContex = swrContex;
+    _swrContext = swrContext;
     
     return 0;
 }

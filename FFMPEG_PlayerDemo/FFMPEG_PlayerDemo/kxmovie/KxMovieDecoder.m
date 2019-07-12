@@ -461,7 +461,7 @@ static NSData* copyFrameData(UInt8 *src, int linesize, int width, int height) {
         if (!formatCtx) {
             return kxMovieErrorOpenFile;
         }
-        
+
         AVIOInterruptCB cb = {interrupt_callback, (__bridge void*)(self)};
         formatCtx->interrupt_callback = cb;
     }

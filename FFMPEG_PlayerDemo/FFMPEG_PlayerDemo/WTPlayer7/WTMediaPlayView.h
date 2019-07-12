@@ -15,6 +15,7 @@
 
 +(instancetype)createPlayViewWithPath:(NSString*)path;
 -(void)startPlayMovie;
+-(void)stopPlay;
 
 @end
 

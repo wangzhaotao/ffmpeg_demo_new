@@ -46,7 +46,7 @@ typedef enum
 -(BOOL)validVideo;
 -(BOOL)validAudio;
 
--(NSArray*)decodeFrames;
+-(NSArray*)decodeFrames:(float)duration;
 
 @end
 

@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define kAudioSampleRate 16000
+#define kAudioSampleRate 44100 //16000
 #define kAudioBitRate 32000
-#define kAudioChannel 1
+#define kAudioChannel 2
 
 
 @interface WTAudioQueuePlay : NSObject

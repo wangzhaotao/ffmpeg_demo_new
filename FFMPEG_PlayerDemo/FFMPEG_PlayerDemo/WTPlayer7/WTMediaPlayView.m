@@ -24,6 +24,8 @@
     
     CGFloat             _minBufferedDuration;
     CGFloat             _maxBufferedDuration;
+    
+    BOOL                _buffered;
 }
 @property (nonatomic, strong) WTAudioQueuePlay *pcmPalyer;
 @property (nonatomic, strong) OpenglView *openglview;
@@ -37,12 +39,35 @@
 
 @implementation WTMediaPlayView
 
+#pragma mark public methods
 +(instancetype)createPlayViewWithPath:(NSString*)path {
     
     WTMediaPlayView *obj = [[WTMediaPlayView alloc]initWithVideo:path];
     return obj;
 }
 
+-(void)startPlayMovie {
+    
+    if (_dispatchQueue) {
+        [self play];
+    }
+}
+
+-(void)stopPlay {
+    
+    [self.pcmPalyer clearData];
+    [self.pcmPalyer stop];
+}
+
+#pragma mark 生命周期
+-(void)dealloc {
+    
+    [self.pcmPalyer clearData];
+    [self.pcmPalyer stop];
+}
+
+
+#pragma mark private methods
 -(instancetype)initWithVideo:(NSString *)moviePath {
     
     if (self = [super init]) {
@@ -97,6 +122,8 @@
         return;
     }
     
+    self.isPlaying = YES;
+    
     if (!self.mediaDecoder.validVideo && !self.mediaDecoder.validAudio) {
         return;
     }
@@ -123,6 +150,13 @@
         [self.pcmPalyer stop];
         self.pcmPalyer=nil;
     }
+    
+    if (_openglview) {
+        [_openglview clearFrame];
+        _openglview = nil;
+    }
+    
+    self.isPlaying = NO;
 }
 
 #pragma mark private methdos
@@ -149,9 +183,12 @@
             @autoreleasepool {
                 if (strongSelf && (strongSelf.mediaDecoder.validVideo||strongSelf.mediaDecoder.validAudio)) {
                     
-                    NSArray *frames = [strongSelf.mediaDecoder decodeFrames];
+                    NSArray *frames = [strongSelf.mediaDecoder decodeFrames:0.1];
                     
                     good = [strongSelf addFrames:frames];
+                    if (_videoFrames.count>30) {
+                        good = NO;
+                    }
                 }
             }
         }
@@ -163,7 +200,50 @@
 }
 -(void)tick {
     
+    if ([self.mediaDecoder validVideo]) {
+        @synchronized (_videoFrames) {
+            if (_videoFrames.count>0) {
+                WTVideoFrame *videoFrame = [_videoFrames objectAtIndex:0];
+                [_videoFrames removeObjectAtIndex:0];
+                
+                
+                [_openglview displayYUV420pData:(void*)videoFrame.dataYUV.bytes width:videoFrame.width height:videoFrame.height isKeyFrame:YES];
+            }
+        }
+    }
     
+    if ([self.mediaDecoder validAudio]) {
+        @synchronized (_audioFrames) {
+            if (_audioFrames.count>0) {
+                WTAudioFrame *audioFrame = [_audioFrames objectAtIndex:0];
+                [_audioFrames removeObjectAtIndex:0];
+                
+                [_pcmPalyer playWithData:audioFrame.samples];
+            }
+        }
+    }
+    
+    if (self.isPlaying) {
+        
+        const NSUInteger leftFrames = ([self.mediaDecoder validVideo] ? _videoFrames.count:0) +
+        ([self.mediaDecoder validAudio] ? _audioFrames.count:0);
+        
+        if (0 == leftFrames) {
+            if (_minBufferedDuration>0 && !_buffered) {
+                _buffered = YES;
+            }
+        }
+        
+        if (!leftFrames) {
+            [self asynDecodeFrames];
+        }
+        
+        const NSTimeInterval time = 0.01;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, time * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self tick];
+        });
+    }
 }
 
 -(BOOL)addFrames:(NSArray*)frames {
@@ -203,6 +283,7 @@
     self.openglview.backgroundColor=[UIColor clearColor];
     [self addSubview:self.openglview];
     self.clipsToBounds=YES;
+    
     [self.openglview setVideoSize:1920 height:1080];
     [self.openglview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(@0);
