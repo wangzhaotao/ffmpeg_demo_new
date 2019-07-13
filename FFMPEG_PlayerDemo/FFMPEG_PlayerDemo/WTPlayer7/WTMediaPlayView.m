@@ -26,6 +26,11 @@
     CGFloat             _maxBufferedDuration;
     
     BOOL                _buffered;
+    NSTimeInterval      _tickCorrectionTime;
+    NSTimeInterval      _tickCorrectionPosition;
+    CGFloat             _moviePosition;
+    
+    CGFloat             _bufferedDuration;
 }
 @property (nonatomic, strong) WTAudioQueuePlay *pcmPalyer;
 @property (nonatomic, strong) OpenglView *openglview;
@@ -79,6 +84,8 @@
 }
 
 -(void)inner_initMediaPlayWithPath:(NSString*)path {
+    
+    _moviePosition = 0;
     
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -208,19 +215,40 @@
                 
                 
                 [_openglview displayYUV420pData:(void*)videoFrame.dataYUV.bytes width:videoFrame.width height:videoFrame.height isKeyFrame:YES];
+                
+                _moviePosition = videoFrame.position;
             }
         }
     }
     
     if ([self.mediaDecoder validAudio]) {
         @synchronized (_audioFrames) {
+            
+            WTAudioFrame *audioFrame = nil;
             if (_audioFrames.count>0) {
-                WTAudioFrame *audioFrame = [_audioFrames objectAtIndex:0];
+                NSInteger count = _audioFrames.count;
+                
+                audioFrame = [_audioFrames objectAtIndex:0];
                 [_audioFrames removeObjectAtIndex:0];
                 
+                const CGFloat delta = _moviePosition - audioFrame.position;
+                if (delta<-0.1) {
+                    audioFrame = nil;
+                }
+                if (delta>0.1 && count>1) {
+                    audioFrame = nil;
+                }
+            }
+            
+            if (audioFrame) {
                 [_pcmPalyer playWithData:audioFrame.samples];
             }
         }
+    }else {
+        WTAudioFrame *audioFrame = [_audioFrames objectAtIndex:0];
+        [_audioFrames removeObjectAtIndex:0];
+        _moviePosition = audioFrame.position;
+        _bufferedDuration -= audioFrame.duration;
     }
     
     if (self.isPlaying) {
@@ -238,7 +266,8 @@
             [self asynDecodeFrames];
         }
         
-        const NSTimeInterval time = 0.01;
+        const NSTimeInterval correction = [self tickCorrection];
+        const NSTimeInterval time = MAX(correction, 0.01);
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, time * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self tick];
@@ -253,6 +282,8 @@
             for (WTMediaFrame *frame in frames) {
                 if (frame.type == WTMediaTypeVideo) {
                     [_videoFrames addObject:frame];
+                    
+                    _bufferedDuration +=frame.duration;
                 }
             }
         }
@@ -263,12 +294,44 @@
             for (WTMediaFrame *frame in frames) {
                 if (frame.type == WTMediaTypeAudio) {
                     [_audioFrames addObject:frame];
+                    
+                    if (![self.mediaDecoder validVideo]) {
+                        _bufferedDuration += frame.duration;
+                    }
                 }
             }
         }
     }
     
-    return YES;
+    return _isPlaying && _bufferedDuration<_maxBufferedDuration;
+}
+
+- (CGFloat) tickCorrection
+{
+    if (_buffered)
+        return 0;
+    
+    const NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+    
+    if (!_tickCorrectionTime) {
+        
+        _tickCorrectionTime = now;
+        _tickCorrectionPosition = _moviePosition;
+        return 0;
+    }
+    
+    NSTimeInterval dPosition = _moviePosition - _tickCorrectionPosition;
+    NSTimeInterval dTime = now - _tickCorrectionTime;
+    NSTimeInterval correction = dPosition - dTime;
+    
+    if (correction > 1.f || correction < -1.f) {
+        
+        NSLog(@"tick correction reset %.2f", correction);
+        correction = 0;
+        _tickCorrectionTime = 0;
+    }
+    
+    return correction;
 }
 
 #pragma mark init methods

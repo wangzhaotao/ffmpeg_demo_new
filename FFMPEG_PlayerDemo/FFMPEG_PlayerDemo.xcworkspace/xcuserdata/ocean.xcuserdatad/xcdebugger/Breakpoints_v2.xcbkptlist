@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
-            timestampString = "584612345.179961"
+            timestampString = "584691026.966846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-play"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
-            timestampString = "584612345.1803581"
+            timestampString = "584691026.967468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "-play"
             landmarkType = "7">
          </BreakpointContent>
@@ -326,7 +326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer7/OpenglView.m"
@@ -336,6 +336,22 @@
             startingLineNumber = "620"
             endingLineNumber = "620"
             landmarkName = "-displayYUV420pData:width:height:isKeyFrame:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
+            timestampString = "584691267.320969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-tick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
