@@ -40,6 +40,7 @@
 		8E5CC5A221411FC500CA954A /* MyMuxer2Pm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CC5A121411FC500CA954A /* MyMuxer2Pm4.c */; };
 		8E5CC5A52141209800CA954A /* streamMuxer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CC5A42141209800CA954A /* streamMuxer.cpp */; };
 		8E5CC5A82141229F00CA954A /* MuxerMp4Object.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CC5A62141229F00CA954A /* MuxerMp4Object.mm */; };
+		8E695A3922DDC1C6003390AD /* WTAudioPlayManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E695A3822DDC1C6003390AD /* WTAudioPlayManage.m */; };
 		8E77F27922B244AB0035C76F /* WTRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E77F27822B244AB0035C76F /* WTRootVC.m */; };
 		8E77F27E22B2456B0035C76F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E77F27C22B2456B0035C76F /* Localizable.strings */; };
 		8E77F28422B246CA0035C76F /* main.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E77F28322B246CA0035C76F /* main.plist */; };
@@ -60,6 +61,8 @@
 		8E81DEA722AF579800272B61 /* WTVideoFilterPure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81DEA622AF579800272B61 /* WTVideoFilterPure.m */; };
 		8E81DEAA22AFBA5300272B61 /* my_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E81DEA922AFBA5300272B61 /* my_logo.png */; };
 		8E8C66D122A0D9820001B71C /* WTVideoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C66D022A0D9820001B71C /* WTVideoFilter.m */; };
+		8E9F018222E0485700649CB9 /* WTAudioPlayVC8.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F018122E0485700649CB9 /* WTAudioPlayVC8.m */; };
+		8E9F018522E04D4B00649CB9 /* WTAudioDecoder8.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9F018422E04D4B00649CB9 /* WTAudioDecoder8.m */; };
 		8EB3FA4022769978001CF59D /* WTMoviePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3FA3F22769978001CF59D /* WTMoviePlayerVC.m */; };
 		8EC90FF9227F08E300794FF0 /* PlayList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8EC90FF8227F08E300794FF0 /* PlayList.txt */; };
 		8EC90FFD227F094000794FF0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC90FFC227F094000794FF0 /* Utils.m */; };
@@ -237,6 +240,8 @@
 		8E5CC5A42141209800CA954A /* streamMuxer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = streamMuxer.cpp; sourceTree = "<group>"; };
 		8E5CC5A62141229F00CA954A /* MuxerMp4Object.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MuxerMp4Object.mm; sourceTree = "<group>"; };
 		8E5CC5A72141229F00CA954A /* MuxerMp4Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuxerMp4Object.h; sourceTree = "<group>"; };
+		8E695A3722DDC1C6003390AD /* WTAudioPlayManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAudioPlayManage.h; sourceTree = "<group>"; };
+		8E695A3822DDC1C6003390AD /* WTAudioPlayManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAudioPlayManage.m; sourceTree = "<group>"; };
 		8E77F27722B244AB0035C76F /* WTRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTRootVC.h; sourceTree = "<group>"; };
 		8E77F27822B244AB0035C76F /* WTRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTRootVC.m; sourceTree = "<group>"; };
 		8E77F27D22B2456B0035C76F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -282,6 +287,10 @@
 		8E81DEA922AFBA5300272B61 /* my_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_logo.png; sourceTree = "<group>"; };
 		8E8C66CF22A0D9820001B71C /* WTVideoFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTVideoFilter.h; sourceTree = "<group>"; };
 		8E8C66D022A0D9820001B71C /* WTVideoFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTVideoFilter.m; sourceTree = "<group>"; };
+		8E9F018022E0485700649CB9 /* WTAudioPlayVC8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAudioPlayVC8.h; sourceTree = "<group>"; };
+		8E9F018122E0485700649CB9 /* WTAudioPlayVC8.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAudioPlayVC8.m; sourceTree = "<group>"; };
+		8E9F018322E04D4B00649CB9 /* WTAudioDecoder8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAudioDecoder8.h; sourceTree = "<group>"; };
+		8E9F018422E04D4B00649CB9 /* WTAudioDecoder8.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAudioDecoder8.m; sourceTree = "<group>"; };
 		8EB3FA3C227698E0001CF59D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8EB3FA3E22769978001CF59D /* WTMoviePlayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMoviePlayerVC.h; sourceTree = "<group>"; };
 		8EB3FA3F22769978001CF59D /* WTMoviePlayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMoviePlayerVC.m; sourceTree = "<group>"; };
@@ -378,6 +387,8 @@
 				8E0ACCAD22D5D363007FBEFD /* WTMediaDecode7.m */,
 				8E0ACCB822D5FB08007FBEFD /* OpenglView.h */,
 				8E0ACCB922D5FB08007FBEFD /* OpenglView.m */,
+				8E695A3722DDC1C6003390AD /* WTAudioPlayManage.h */,
+				8E695A3822DDC1C6003390AD /* WTAudioPlayManage.m */,
 				8E0ACCB522D5F6AF007FBEFD /* WTAudioQueuePlay.h */,
 				8E0ACCB622D5F6AF007FBEFD /* WTAudioQueuePlay.m */,
 			);
@@ -595,6 +606,7 @@
 				8E786176228EB071009EC8F1 /* Libs */,
 				8EC90FFA227F092800794FF0 /* Utils */,
 				8E5CC59921411F3800CA954A /* Muxer2Mp4 */,
+				8E9F017F22E0482000649CB9 /* WTAudioPlay8 */,
 				8E0ACCA822D5D2F1007FBEFD /* WTPlayer7 */,
 				8E48FBBC22B2390F005D93BD /* WTPlayer6_Filte */,
 				8E4BF02022AF55CC00235012 /* WTPlayer5_Filte */,
@@ -806,6 +818,17 @@
 				8E1DC0E422B3B78100660169 /* FFmpeg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		8E9F017F22E0482000649CB9 /* WTAudioPlay8 */ = {
+			isa = PBXGroup;
+			children = (
+				8E9F018022E0485700649CB9 /* WTAudioPlayVC8.h */,
+				8E9F018122E0485700649CB9 /* WTAudioPlayVC8.m */,
+				8E9F018322E04D4B00649CB9 /* WTAudioDecoder8.h */,
+				8E9F018422E04D4B00649CB9 /* WTAudioDecoder8.m */,
+			);
+			path = WTAudioPlay8;
 			sourceTree = "<group>";
 		};
 		8EB3FA3D2276992C001CF59D /* WTPlayer */ = {
@@ -1052,6 +1075,7 @@
 				8E1FDB582124057F00D1BB42 /* WTMainController.m in Sources */,
 				8E017C1222A770C700EEA4CD /* WTTestVC4.m in Sources */,
 				8EFBB4B222B38C770040F50C /* WTYUV2Mp4Tool.c in Sources */,
+				8E9F018222E0485700649CB9 /* WTAudioPlayVC8.m in Sources */,
 				8E78618C228EB267009EC8F1 /* KxMovieGLView.m in Sources */,
 				8E786174228EA1CF009EC8F1 /* AACEncoder.m in Sources */,
 				8E1FDB31212404C100D1BB42 /* main.m in Sources */,
@@ -1060,7 +1084,9 @@
 				8E78618E228EB267009EC8F1 /* KxMovieDecoder.m in Sources */,
 				8E0ACCBA22D5FB08007FBEFD /* OpenglView.m in Sources */,
 				8E786175228EA1CF009EC8F1 /* AACDecoder.m in Sources */,
+				8E695A3922DDC1C6003390AD /* WTAudioPlayManage.m in Sources */,
 				8E5CC5A82141229F00CA954A /* MuxerMp4Object.mm in Sources */,
+				8E9F018522E04D4B00649CB9 /* WTAudioDecoder8.m in Sources */,
 				8E1FDB23212404C000D1BB42 /* AppDelegate.m in Sources */,
 				8E77F27922B244AB0035C76F /* WTRootVC.m in Sources */,
 			);

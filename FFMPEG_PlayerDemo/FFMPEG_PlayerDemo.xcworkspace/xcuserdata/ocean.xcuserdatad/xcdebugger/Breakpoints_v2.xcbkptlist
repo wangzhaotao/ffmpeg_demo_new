@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
-            timestampString = "584691026.966846"
+            timestampString = "584960369.654731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "-play"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
-            timestampString = "584691026.967468"
+            timestampString = "584960369.65481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-play"
             landmarkType = "7">
          </BreakpointContent>
@@ -336,22 +336,6 @@
             startingLineNumber = "620"
             endingLineNumber = "620"
             landmarkName = "-displayYUV420pData:width:height:isKeyFrame:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FFMPEG_PlayerDemo/WTPlayer7/WTMediaPlayView.m"
-            timestampString = "584691267.320969"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "-tick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

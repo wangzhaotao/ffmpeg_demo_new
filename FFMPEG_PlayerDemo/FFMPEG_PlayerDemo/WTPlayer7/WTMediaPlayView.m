@@ -10,6 +10,7 @@
 #import "WTAudioQueuePlay.h"
 #import "OpenglView.h"
 #import "WTMediaDecode7.h"
+#import "WTAudioPlayManage.h"
 
 #define NETWORK_MIN_Data_BUFFERED_DURATION 2.0
 #define NETWORK_MAX_Data_BUFFERED_DURATION 4.0
@@ -33,6 +34,7 @@
     CGFloat             _bufferedDuration;
 }
 @property (nonatomic, strong) WTAudioQueuePlay *pcmPalyer;
+@property (nonatomic, strong) WTAudioPlayManage *audioPlayer;
 @property (nonatomic, strong) OpenglView *openglview;
 
 @property (nonatomic, strong) WTMediaDecode7 *mediaDecoder;
@@ -62,13 +64,14 @@
     
     [self.pcmPalyer clearData];
     [self.pcmPalyer stop];
+    
+    [self.audioPlayer stop];
 }
 
 #pragma mark 生命周期
 -(void)dealloc {
     
-    [self.pcmPalyer clearData];
-    [self.pcmPalyer stop];
+    [self stopPlay];
 }
 
 
@@ -148,6 +151,8 @@
     if (self.mediaDecoder.validAudio) {
         //初始化音频播放器
         [self.pcmPalyer class];
+        
+        [self.audioPlayer class];
     }
 }
 
@@ -212,10 +217,10 @@
             if (_videoFrames.count>0) {
                 WTVideoFrame *videoFrame = [_videoFrames objectAtIndex:0];
                 [_videoFrames removeObjectAtIndex:0];
-                
-                
+
+
                 [_openglview displayYUV420pData:(void*)videoFrame.dataYUV.bytes width:videoFrame.width height:videoFrame.height isKeyFrame:YES];
-                
+
                 _moviePosition = videoFrame.position;
             }
         }
@@ -241,7 +246,8 @@
             }
             
             if (audioFrame) {
-                [_pcmPalyer playWithData:audioFrame.samples];
+                [self.pcmPalyer playWithData:audioFrame.samples];
+                //[self.audioPlayer playWith:(void*)audioFrame.samples.bytes length:(int)audioFrame.samples.length];
             }
         }
     }else {
@@ -340,6 +346,12 @@
         _pcmPalyer=[[WTAudioQueuePlay alloc] initWithSampleRate:kAudioSampleRate channel:kAudioChannel];
     }
     return _pcmPalyer;
+}
+-(WTAudioPlayManage*)audioPlayer {
+    if (!_audioPlayer) {
+        _audioPlayer = [[WTAudioPlayManage alloc]initWithSampleRate:kAudioPlaySampleRate];
+    }
+    return _audioPlayer;
 }
 - (void)setupPlayView{
     self.openglview=[[OpenglView alloc] initWithFrame:self.bounds];

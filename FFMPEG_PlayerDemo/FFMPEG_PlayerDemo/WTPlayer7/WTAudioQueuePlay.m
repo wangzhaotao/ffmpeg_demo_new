@@ -68,16 +68,27 @@
     if (pasdb == NULL) {
         return ;
     }
-    //默认播放16K，16bit，1ch的声音
-    pasdb->mFormatID = kAudioFormatLinearPCM;
-    pasdb->mFormatFlags = kLinearPCMFormatFlagIsSignedInteger;
-    pasdb->mSampleRate = 16000;
-    pasdb->mChannelsPerFrame = 1;
-    pasdb->mBitsPerChannel = 16;
-    pasdb->mFramesPerPacket = 1;
-    pasdb->mReserved = 0;
-    pasdb->mBytesPerFrame = pasdb->mChannelsPerFrame * (pasdb->mBitsPerChannel / 8);
-    pasdb->mBytesPerPacket = pasdb->mBytesPerFrame * pasdb->mFramesPerPacket;
+//    //默认播放16K，16bit，1ch的声音
+//    pasdb->mFormatID = kAudioFormatLinearPCM;
+//    pasdb->mFormatFlags = kLinearPCMFormatFlagIsSignedInteger;
+//    pasdb->mSampleRate = kAudioSampleRate;
+//    pasdb->mChannelsPerFrame = kAudioChannel;
+//    pasdb->mBitsPerChannel = 32; //16
+//    pasdb->mFramesPerPacket = 1;
+//    pasdb->mReserved = 0;
+//    pasdb->mBytesPerFrame = pasdb->mChannelsPerFrame * (pasdb->mBitsPerChannel / 8);
+//    pasdb->mBytesPerPacket = pasdb->mBytesPerFrame * pasdb->mFramesPerPacket;
+    
+    //设置音频参数
+    pasdb->mSampleRate       = 44100;//采样率
+    pasdb->mFormatID         = kAudioFormatLinearPCM;
+    pasdb->mFormatFlags      = kLinearPCMFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
+    pasdb->mChannelsPerFrame = 2;//声道
+    pasdb->mFramesPerPacket  = 1;//每一个packet一侦数据
+    pasdb->mBitsPerChannel   = 16;// 0 for compressed forma
+    pasdb->mBytesPerFrame    = pasdb->mChannelsPerFrame * (pasdb->mBitsPerChannel / 8);
+    pasdb->mBytesPerPacket   = pasdb->mBytesPerFrame * pasdb->mFramesPerPacket;
+    pasdb->mReserved         = 0;
 }
 
 -(void)initAudioProcess:(AudioStreamBasicDescription*)asbd activeAudioSesion:(BOOL)active {
@@ -174,10 +185,15 @@ static void AudioPlayerAQInputCallback(void* inUserData,AudioQueueRef audioQueue
 {
     if (pcmDataArray!=nil&&pcmDataArray.count>0) {
         NSData *data=[pcmDataArray objectAtIndex:0];
-        Byte *bytes = (Byte*)malloc(minSizePerFrame);
-        [data getBytes:bytes length:minSizePerFrame];
+        
+        unsigned int audioDataLength = (int)data.length; //minSizePerFrame
+        
+        Byte *bytes = (Byte*)malloc(audioDataLength);
+        [data getBytes:bytes length:audioDataLength];
+        
         [pcmDataArray removeObjectAtIndex:0];
-        memcpy(inBuffer->mAudioData, bytes, minSizePerFrame);
+        
+        memcpy(inBuffer->mAudioData, bytes, audioDataLength);
         free(bytes);
     }else{
         memset(inBuffer->mAudioData, 0, minSizePerFrame);
@@ -185,6 +201,7 @@ static void AudioPlayerAQInputCallback(void* inUserData,AudioQueueRef audioQueue
     inBuffer->mAudioDataByteSize = minSizePerFrame;
     AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, NULL);
 }
+
 
 
 -(void)clearData{
