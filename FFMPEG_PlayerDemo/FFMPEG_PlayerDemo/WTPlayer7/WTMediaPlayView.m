@@ -247,7 +247,7 @@
             
             if (audioFrame) {
                 [self.pcmPalyer playWithData:audioFrame.samples];
-                //[self.audioPlayer playWith:(void*)audioFrame.samples.bytes length:(int)audioFrame.samples.length];
+                [self.audioPlayer playWith:(void*)audioFrame.samples.bytes length:(int)audioFrame.samples.length];
             }
         }
     }else {
